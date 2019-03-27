@@ -1,0 +1,30 @@
+﻿<h1>Add User</h1>
+
+<p *ngIf="!usermodel"><em>Loading...</em></p>
+
+<form method="post" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <div>
+            Username:
+        </div>
+        <div>
+            <input type="text" name="User name" [(ngModel)]="usermodel.Name" /><br /><br />
+        </div>
+        <div>
+            Email:
+        </div>
+        <div>
+            <input type="text" name="Email" [(ngModel)]="usermodel.Email" /><br /><br />
+        </div>
+        <div>
+            Password:
+        </div>
+        <div>
+            <input type="text" name="Password" [(ngModel)]="usermodel.Password" /><br /><br />
+        </div>
+        <input type="submit" value="Save" />
+        <input type="button" value="Delete" (click)="onDelete(usermodel.Name)" />
+    </div>
+
+</form>
+
